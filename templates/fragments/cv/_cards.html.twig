@@ -1,0 +1,15 @@
+<section class="container cv">
+    <div class="masonry-portfolio fixed-filters row">
+        <h2>Expérience</h2>
+        <div class="masonry-portfolio-items">
+            {% for datum in data %}
+                {{  include('fragments/cv/_card.html.twig', {
+                    "title": datum.title,
+                    "image": datum.img,
+                    "fichierPDF": datum.pdf,
+                    "linkURL": datum.url
+                }) }}
+            {% endfor %}
+        </div>
+    </div>
+</section>

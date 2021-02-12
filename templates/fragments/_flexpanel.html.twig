@@ -1,0 +1,38 @@
+<div class="flexpanel">
+    <div class="viewport-wrap">
+        <div class="viewport">
+            <div class="widget mb50">
+                <h4 class="widget-title">Mes Derniers Projets</h4>
+                <div>
+                    <?php foreach ($params['datas']['dataPortfolio'] as $key => $value) { ?>
+                    <div class="media">
+                        <div class="pull-left">
+                            <img class="widget-img" src="<?= $value['img']  ?>" alt="">
+                        </div>
+                        <div class="media-body">
+                            <span class="media-heading"><a href="#"><?= $value['TITLE']  ?></a></span>
+                            <small class="muted"><?= $value['CREATION_DATE']  ?></small>
+                        </div>
+                    </div>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="widget mb50">
+                <h4 class="widget-title"><strong>Latest</strong> Articles</h4>
+                <div class="tagcloud">
+                    <?php
+          foreach ($tags as $keyTag => $tag) {
+                    ?>
+                    <a href="#" class="tag-link btn btn-theme btn-xs" title="3 topics"><?= $tag ?></a>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="widget about-us-widget mb50">
+                <h4 class="widget-title">Me Contacter</h4>
+                <p>Lapalus Michel, 52 boulevard de Vanves 92320 Chatillon</p>
+                <p>Tel: 0641586214</p>
+                <p>Mail : mlapalus.dev@gmail.com</p>
+            </div>
+        </div>
+    </div>
+</div>

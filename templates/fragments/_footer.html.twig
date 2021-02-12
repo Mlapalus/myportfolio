@@ -1,0 +1,79 @@
+<div id="footer-wrapper" class="footer-image-bg">
+    <section class="transparent-wrapper">
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="widget about-us-widget">
+                            <h4 class="widget-title"><strong>Me</strong> Contacter</h4>
+                            <p>Lapalus Michel, 52 boulevard de Vanves 92320 Chatillon</p>
+                            <p>Tel: 0641586214</p>
+                            <p>Mail : mlapalus.dev@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="widget">
+                            <h4 class="widget-title"><strong>Derniers</strong> Projets</h4>
+                            <div>
+                                <?php foreach ($params['datas']['dataPortfolio'] as $key => $value) { ?>
+                                <div class="media">
+                                    <div class="pull-left">
+                                        <img class="widget-img" src="<?= $value['img']  ?>" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="media-heading"><a href="#"><?= $value['TITLE']  ?></a></span>
+                                        <small class="muted"><?= $value['CREATION_DATE']  ?></small>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="widget">
+                            <h4 class="widget-title">Mes technologies</h4>
+                            <div class="tagcloud">
+                                <?php
+                foreach ($tags as $keyTag => $tag) {
+                                ?>
+                                <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics"><?= $tag ?></a>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="white-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-left match-height">
+                    <ul class="list-inline social-links wow">
+                        <li>
+                            <a href="https://www.facebook.com/michel.lapalus.5"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/michel-lapalus-52a7987b/"> <i class="fa fa-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://codepen.io/mlapalus"><i class="fa fa-code"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 text-right match-height">
+                    <div class="vertical-center">
+                        <span class="copyright">Copyright 2019. Designed by DISTINCTIVE THEMES & MLapalus-Dev</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+
+
+

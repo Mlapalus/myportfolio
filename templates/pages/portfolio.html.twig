@@ -1,0 +1,61 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <section class="white-bg">
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb50">
+                        <ul class="portfolio-filter mb30 list-inline wow">
+                            <li><a class="btn btn-primary active" href="#" data-filter="*">All</a></li>
+                            {% for languageTag in languageTags %}
+                                <li>
+                                    <a class="btn btn-primary" href="#"
+                                       data-filter=".{{ languageTag.name }}">{{ languageTag.name }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div>
+                    <ul class="portfolio-items nopadding-lr isotope list-unstyled">
+                        {% for datum in dataPortfolio %}
+                            <li class="col-sm-6 col-xs-12 portfolio-item nopadding-lr
+                                        {% for tagDatum in tagData %}
+                                            {% if datum.id is same as(tagDatum.id) %}
+                                                {{ tagDatum.tag }}
+                                            {% endif%}
+                                        {% endfor %}
+                                        isotope-item hover-item"
+                                style="padding: 25px;"
+                            >
+                            <img src="{{ datum.img }}" class="img-responsive smoothie" alt="">
+                            <div class="overlay-item-caption smoothie"></div>
+                            <div class="hover-item-caption smoothie">
+                                <div class="vertical-center smoothie">
+                                    <h3 class="smoothie mb30"><a href="" title="view project">Site Web</a>
+                                    </h3>
+                                    <a href="{{ asset('assets/img/portfolio/portfolio1.jpg') }}" title="View"
+                                       class="btn btn-primary lb-link smoothie">
+                                        {% for tagDatum in tagData %}
+                                            {% if datum.id is same as(tagDatum.id) %}
+                                                #{{ tagDatum.tag }}
+                                            {% endif%}
+                                        {% endfor %}
+                                    </a>
+                                    <a href="{{ datum.url }}" class="smoothie btn btn-primary">View</a>
+                                </div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

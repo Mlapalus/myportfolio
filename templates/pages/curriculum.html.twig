@@ -1,0 +1,6 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {{ include('fragments/cv/_experiences.html.twig', {experiences: experiences}) }}
+    {{ include('fragments/cv/_formations.html.twig', {formations: formations}) }}
+{% endblock %}

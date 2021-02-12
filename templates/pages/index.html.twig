@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <section id="welcome">
+        <div class="section-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 mb100 wow">
+                        <h2 class="section-heading">
+                            {{ lastname }} {{ firstname }}
+                        </h2>
+                        <h3 class="section-subheading secondary-font">{{ surname }}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="lead">{{ userDescription }}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{ asset('assets/img/ma-photo-mini.jpg') }}"
+                             class="img-responsive alignright wow fadeIn" data-wow-delay="0.5s"
+                             alt="La photo de Michel Lapalus">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

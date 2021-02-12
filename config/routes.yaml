@@ -1,3 +1,9 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: App\Controller\PagesController::index
+curriculum:
+  path: /cv
+  controller: App\Controller\PagesController::curriculum
+portfolio:
+  path: /portfolio
+  controller: App\Controller\PagesController::portfolio
