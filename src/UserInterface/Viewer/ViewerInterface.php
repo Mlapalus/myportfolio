@@ -1,12 +1,11 @@
 <?php
 
 
-namespace App\Interfaces;
+namespace App\UserInterface\Viewer;
 
-
-use Symfony\Component\HttpFoundation\Response;
 
 interface ViewerInterface
 {
     public function render(string $template, array $options): string;
+
 }

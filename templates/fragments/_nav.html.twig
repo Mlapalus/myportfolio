@@ -39,10 +39,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand smoothie logo logo-light" href="{{ path('index') }}">
+            <a class="navbar-brand smoothie logo logo-light" href="{{ path('home') }}">
                 <img src="{{ asset('assets/img/logo-ml-dark.png') }}" width="200px" alt="logo">
             </a>
-            <a class="navbar-brand smoothie logo logo-dark" href="{{ path('index') }}">
+            <a class="navbar-brand smoothie logo logo-dark" href="{{ path('home') }}">
                 <img src="{{ asset('assets/img/logo-ml-light.png') }}" width="200px" alt="logo">
             </a>
         </div>
@@ -50,7 +50,7 @@
         <div class="collapse navbar-collapse" id="main-navigation" style="">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
-                    <a href="{{ path('index') }}" class="nav-link">Accueil</a>
+                    <a href="{{ path('home') }}" class="nav-link">Accueil</a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ path('curriculum') }}" class="nav-link">Curriculum Vitae</a>
@@ -58,7 +58,10 @@
                 <li class="nav-item">
                     <a href="{{ path('portfolio') }}" class="nav-link">Portfolio</a>
                 </li>
-                <li><a href="javascript:void(0);" class="side-menu-trigger hidden-xs"><i class="fa fa-bars"></i></a></li>
+                <li>
+                    <a href="javascript:void(0);" class="side-menu-trigger hidden-xs"><i class="fa fa-bars"></i>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

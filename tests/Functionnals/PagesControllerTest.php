@@ -30,12 +30,5 @@ class PagesControllerTest extends WebTestCase
         $this->assertResponseStatusCodeSame(Response::HTTP_OK);
     }
 
-    /**
-     * @dataProvider urlProvider
-     */
-    public function test_if_data_are_in_a_paragraphe($url)
-    {
-
-    }
 
 }

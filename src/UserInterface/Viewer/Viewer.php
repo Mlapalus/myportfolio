@@ -1,13 +1,13 @@
 <?php
 
 
-namespace App\Viewer;
+namespace App\UserInterface\Viewer;
 
 
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
-class Viewer implements \App\Interfaces\ViewerInterface
+class Viewer implements ViewerInterface
 {
     private Environment $twig;
 

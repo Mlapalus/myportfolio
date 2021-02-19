@@ -1,9 +1,14 @@
-index:
+home:
     path: /
-    controller: App\Controller\PagesController::index
+    methods: GET
+    controller: App\UserInterface\Controller\HomeController::index
+
 curriculum:
   path: /cv
-  controller: App\Controller\PagesController::curriculum
+  methods: GET
+  controller: App\UserInterface\Controller\CurriculumController::curriculum
+
 portfolio:
   path: /portfolio
-  controller: App\Controller\PagesController::portfolio
+  methods: GET
+  controller: App\UserInterface\Controller\PortfolioController::portfolio

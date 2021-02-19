@@ -15,17 +15,17 @@
                         <div class="widget">
                             <h4 class="widget-title"><strong>Derniers</strong> Projets</h4>
                             <div>
-                                <?php foreach ($params['datas']['dataPortfolio'] as $key => $value) { ?>
-                                <div class="media">
-                                    <div class="pull-left">
-                                        <img class="widget-img" src="<?= $value['img']  ?>" alt="">
+                                {% for datum in dataPortfolio %}
+                                    <div class="media">
+                                        <div class="pull-left">
+                                            <img class="widget-img" src="{{ datum.img }}" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <span class="media-heading"><a href="#">{{ datum.title }}</a></span>
+                                            <small class="muted">{{ datum.createdDate | date('Y:m:d') }}</small>
+                                        </div>
                                     </div>
-                                    <div class="media-body">
-                                        <span class="media-heading"><a href="#"><?= $value['TITLE']  ?></a></span>
-                                        <small class="muted"><?= $value['CREATION_DATE']  ?></small>
-                                    </div>
-                                </div>
-                                <?php } ?>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -33,11 +33,10 @@
                         <div class="widget">
                             <h4 class="widget-title">Mes technologies</h4>
                             <div class="tagcloud">
-                                <?php
-                foreach ($tags as $keyTag => $tag) {
-                                ?>
-                                <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie" title="3 topics"><?= $tag ?></a>
-                                <?php } ?>
+                                {% for tagDatum in tagData %}
+                                    <a href="#" class="tag-link btn btn-theme btn-white btn-xs smoothie"
+                                       title="3 topics">{{ tagDatum.tag }}</a>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

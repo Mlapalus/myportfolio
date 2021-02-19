@@ -1,13 +1,26 @@
 <?php
 
 
-namespace App\Presenter;
+namespace MLapalus\Portfolio\Domain\Response;
 
 
-class PortfolioPresenter implements \App\Interfaces\PresenterInterface
+class PortfolioResponse
 {
+    private array $dataPortfolio;
+    private array $tagData;
 
-    public function getData(): array
+    /**
+     * PortfolioResponse constructor.
+     * @param array $dataPortfolio
+     * @param array $tagData
+     */
+    public function __construct(array $dataPortfolio, array $tagData)
+    {
+        $this->dataPortfolio = $dataPortfolio;
+        $this->tagData = $tagData;
+    }
+
+    public function getPortfolio(): array
     {
         return [
             "firstname" => "Michel",
@@ -17,25 +30,31 @@ class PortfolioPresenter implements \App\Interfaces\PresenterInterface
                 ["name" => "PHP"],
                 ["name" => "HTML"],
                 ["name" => "CSS"]
-             ],
-            "dataPortfolio" => [
+            ],
+            "dataPortfolio" => $this->dataPortfolio,
+                /*[
                 [
                     "id" => 0,
                     "img" => "https://via.placeholder.com/150",
-                    "url" => ""
+                    "url" => "",
+                    'title' => "titre1"
                 ],
                 [
                     "id" => 1,
                     "img" => "https://via.placeholder.com/150",
-                    "url" => ""
+                    "url" => "",
+                    'title' => "titre2"
                 ],
                 [
                     "id" => 2,
                     "img" => "https://via.placeholder.com/150",
-                    "url" => ""
+                    "url" => "",
+                    "title" => "titre3"
                 ]
             ],
-            "tagData" => [
+                */
+            "tagData" => $this->tagData
+                /*[
                 [
                     "id" => 0,
                     "tag" => "PHP"
@@ -49,6 +68,7 @@ class PortfolioPresenter implements \App\Interfaces\PresenterInterface
                     "tag" => "CSS"
                 ]
             ],
-            ];
+                */
+        ];
     }
 }
