@@ -4,7 +4,6 @@
 namespace App\Infrastructure\Doctrine\Entity;
 
 use Ramsey\Uuid\UuidInterface;
-use Ramsey\Uuid\Uuid;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -13,6 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class Experience
  * @package App\Infrastructure\Doctrine\Entity
  * @ORM\Entity()
+ * @ORM\Table(name="EXPERIENCES")
  */
 class Experience
 {

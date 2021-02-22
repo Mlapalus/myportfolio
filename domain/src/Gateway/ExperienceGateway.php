@@ -30,7 +30,7 @@ interface ExperienceGateway
     public function getExperienceById(UuidInterface $id): ?Experience;
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getAll(): array;
 }

@@ -1,7 +1,6 @@
 <?php
 namespace MLapalus\Portfolio\Domain\Entity;
 
-
 use Ramsey\Uuid\UuidInterface;
 
 /**
@@ -10,11 +9,41 @@ use Ramsey\Uuid\UuidInterface;
  */
 class Experience
 {
+    /**
+     * @var UuidInterface
+     */
     private UuidInterface  $id;
+    /**
+     * @var string
+     */
     private string $title;
+    /**
+     * @var string
+     */
     private string $company;
+    /**
+     * @var string
+     */
     private string $description;
+    /**
+     * @var string
+     */
+    private string $url;
+    /**
+     * @var string
+     */
+    private string $img;
+    /**
+     * @var string
+     */
+    private string $pdf;
+    /**
+     * @var \DateTimeInterface
+     */
     private \DateTimeInterface $startDate;
+    /**
+     * @var \DateTimeInterface
+     */
     private \DateTimeInterface $endDate;
 
     /**
@@ -31,6 +60,9 @@ class Experience
         string $title,
         string $company,
         string $description,
+        string $url,
+        string $pdf,
+        string $img,
         \DateTimeInterface $startDate,
         \DateTimeInterface $endDate
     )
@@ -38,6 +70,9 @@ class Experience
         $this->id = $id;
         $this->title = $title;
         $this->company = $company;
+        $this->url = $url;
+        $this->pdf = $pdf;
+        $this->img = $img;
         $this->description = $description;
         $this->startDate = $startDate;
         $this->endDate = $endDate;
@@ -129,6 +164,54 @@ class Experience
     public function setEndDate(\DateTimeInterface $endDate): void
     {
         $this->endDate = $endDate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param string $url
+     */
+    public function setUrl(string $url): void
+    {
+        $this->url = $url;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImg(): string
+    {
+        return $this->img;
+    }
+
+    /**
+     * @param string $img
+     */
+    public function setImg(string $img): void
+    {
+        $this->img = $img;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPdf(): string
+    {
+        return $this->pdf;
+    }
+
+    /**
+     * @param string $pdf
+     */
+    public function setPdf(string $pdf): void
+    {
+        $this->pdf = $pdf;
     }
 
 

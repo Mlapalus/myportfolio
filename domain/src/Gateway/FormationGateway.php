@@ -30,7 +30,7 @@ interface FormationGateway
     public function getFormationById(UuidInterface $id): ?Formation;
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getAll(): array;
 }

@@ -5,11 +5,12 @@ namespace App\Infrastructure\Doctrine\DataFixtures;
 
 
 use App\Infrastructure\Doctrine\Entity\Portfolio;
-use App\Infrastructure\Doctrine\Entity\PortfolioTags;
+use App\Infrastructure\Doctrine\Entity\Tag;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Ramsey\Uuid\Uuid;
 
-class PortfolioFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture
+class PortfolioFixtures extends Fixture
 {
 
     /**
@@ -30,7 +31,7 @@ class PortfolioFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture
             $tags=[];
             for ($j=1;$j<random_int(1,6);$j++)
             {
-              $tag = new PortfolioTags();
+              $tag = new Tag();
               $tag->setId(Uuid::uuid4());
               $tag->setTag("TAG$j");
               $portfolios = [];

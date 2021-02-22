@@ -3,7 +3,6 @@
 
 namespace App\Infrastructure\Adapter\Repository;
 
-
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use MLapalus\Portfolio\Domain\Entity\Formation;

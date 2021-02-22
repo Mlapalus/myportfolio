@@ -10,8 +10,6 @@ use MLapalus\Portfolio\Domain\Response\PortfolioResponse;
 class PortfolioPresenter implements PortfolioPresenterInterface
 {
 
-
-
     public function present(PortfolioResponse $response): array
     {
         return $response->getPortfolio();

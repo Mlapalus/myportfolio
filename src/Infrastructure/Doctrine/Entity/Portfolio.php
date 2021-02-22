@@ -15,6 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class Portfolio
  * @package App\Infrastructure\Doctrine\Entity
  * @ORM\Entity()
+ * @ORM\Table(name="PORTFOLIO")
  *
  */
 class Portfolio
@@ -75,7 +76,7 @@ class Portfolio
     /**
      * Many Portfolio have many tags, and many tags are in many portfolio
      * @var Collection
-     * @ORM\ManyToMany(targetEntity="PortfolioTags", inversedBy="portfolios" )
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="portfolios" )
      * @ORM\JoinTable(name="portfolios_tags")
      */
     private Collection $tags;

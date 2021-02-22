@@ -5,7 +5,7 @@ namespace MLapalus\Portfolio\Domain\UseCase;
 
 
 use MLapalus\Portfolio\Domain\Gateway\PortfolioGateway;
-use MLapalus\Portfolio\Domain\Gateway\PortfolioTagGateway;
+use MLapalus\Portfolio\Domain\Gateway\TagGateway;
 use MLapalus\Portfolio\Domain\Response\HomePageResponse;
 
 class HomePage
@@ -16,7 +16,7 @@ class HomePage
      */
     public function execute(
         PortfolioGateway $portfolio,
-        PortfolioTagGateway $tags
+        TagGateway $tags
     ) : HomePageResponse
  {
      $dataPortfolio = $portfolio->getAll();

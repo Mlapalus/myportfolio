@@ -1,21 +1,19 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\Entity;
 
-
 use Ramsey\Uuid\UuidInterface;
-use Ramsey\Uuid\Uuid;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class PortfolioTags
+ * Class Tag
  * @package App\Infrastructure\Doctrine\Entity
  * @ORM\Entity()
+ * @ORM\Table(name="PORTFOLIO_TAGS")
  */
-class PortfolioTags
+class Tag
 {
     /**
      * @var UuidInterface

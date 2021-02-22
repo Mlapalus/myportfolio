@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Class Formation
  * @package App\Infrastructure\Doctrine\Entity
  * @ORM\Entity()
+ * @ORM\Table(name="FORMATIONS")
  */
 class Formation
 {

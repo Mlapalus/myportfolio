@@ -15,8 +15,8 @@ class HomePageResponse
 
     /**
      * HomePageResponse constructor.
-     * @param array $tagData
      * @param array $dataPortfolio
+     * @param array $tagData
      */
     public function __construct(array $dataPortfolio, array $tagData)
     {

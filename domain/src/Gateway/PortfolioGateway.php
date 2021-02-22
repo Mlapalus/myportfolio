@@ -30,7 +30,7 @@ interface PortfolioGateway
     public function getPortfolioById(UuidInterface $id): ?Portfolio;
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getAll(): array;
 }
