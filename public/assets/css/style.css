@@ -157,7 +157,7 @@ h6 {
 }
 
 .mt0 {
-    margin-top: 0px
+    margin-top: 0
 }
 
 .mt20 {
@@ -362,7 +362,7 @@ body {
     font-weight: 700;
     color: #333;
     background-color: transparent;
-    padding: 15px 0px;
+    padding: 15px 0;
     letter-spacing: 1px;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
@@ -1100,7 +1100,7 @@ section h3.section-subheading {
 }
 
 .item-metas .meta-item:last-of-type {
-    margin-right: 0px;
+    margin-right: 0;
 }
 
 .meta-item span {
@@ -1197,7 +1197,7 @@ textarea#comments {
     width: 100%;
     height: 100%;
     left: 0;
-    top: 0px;
+    top: 0;
     background-color: rgba(255, 255, 255, 0.9);
     text-align: center;
     z-index: 2;
@@ -1232,7 +1232,7 @@ textarea#comments {
 
 .hover-item-caption h3,
 .hover-item-caption .smoothie {
-    top: 0px;
+    top: 0;
     position: relative;
 }
 
@@ -1242,12 +1242,12 @@ textarea#comments {
 
 .hover-item:hover .hover-item-caption h3,
 .hover-item:hover .smoothie {
-    top: 0px;
+    top: 0;
 }
 
 .hover-item:hover .overlay-item-caption {
     opacity: 0;
-    top: 0px;
+    top: 0;
 }
 
 .hover-item:hover .overlay-item-caption .vertical-center {
@@ -1370,7 +1370,6 @@ footer.white-wrapper * {
 
 footer.white-wrapper span.copyright {
     letter-spacing: 1px;
-    text-transform: uppercase;
     text-transform: none;
     line-height: 40px
 }
@@ -1492,7 +1491,6 @@ footer.white-wrapper .social-links li a {
     text-align: left;
     border: 0;
     margin: 0 auto;
-    margin-top: 0;
     padding-left: 0;
     padding-bottom: 13px;
     outline: none;
@@ -1832,7 +1830,7 @@ footer.white-wrapper .social-links li a {
 
 .nav.nav-justified > li > a > .quote {
     position: absolute;
-    left: 0px;
+    left: 0;
     top: 0;
     opacity: 0;
     width: 30px;
@@ -1879,7 +1877,7 @@ footer.white-wrapper .social-links li a {
         left: auto;
         top: auto;
         right: 20px;
-        bottom: 0px;
+        bottom: 0;
     }
     #headerwrap.fullheight {
         min-height: 100vh;
@@ -2371,7 +2369,7 @@ footer.white-wrapper .social-links li a {
     font-weight: 700;
     font-size: 14px;
     color: #fff;
-    padding: 12px 0px;
+    padding: 12px 0;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
@@ -2381,7 +2379,7 @@ footer.white-wrapper .social-links li a {
 }
 
 .side-menu .dropdown-menu>li>a {
-    padding: 10px 0px;
+    padding: 10px 0;
     font-size: 11px;
     font-weight: 400;
     white-space: normal;
