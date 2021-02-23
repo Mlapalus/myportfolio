@@ -1,4 +1,6 @@
 {
+    "name": "mlapalus/portfolio",
+    "description": "My portfolio and CV site",
     "type": "project",
     "license": "proprietary",
     "minimum-stability": "dev",
