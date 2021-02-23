@@ -1,0 +1,2 @@
+# myportfolio
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3fdea03c38284a419635691f2a8cf5a6)](https://app.codacy.com/gh/Mlapalus/myportfolio?utm_source=github.com&utm_medium=referral&utm_content=Mlapalus/myportfolio&utm_campaign=Badge_Grade_Settings)
