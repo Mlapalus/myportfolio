@@ -16,4 +16,4 @@ jobs:
       - run: composer install --ansi --prefer-dist --no-interaction --no-progress --quiet
 
       - name: Run phpstan
-        run: ./vendor/bin/phpstan analyse -n analyze domain/src src
+        run: php vendor/bin/phpstan -n analyze domain/src src
