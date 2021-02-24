@@ -9,14 +9,14 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
         php-versions: ['7.4']
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: ''
-        ports:
-          - 3306:3306
     steps:
+      - uses: mirromutth/mysql-action@v1.1
+        with:
+          host port: 3306
+          mysql version: '5.7'
+          mysql database: db_dev
+          mysql root password: ${{ secrets.RootPassword }}
+          mysql password: ${{ secrets.DatabasePassword }}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Setup PHP, with composer and extensions
