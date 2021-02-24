@@ -14,7 +14,7 @@ jobs:
         with:
           host port: 3306
           mysql version: '5.7'
-          mysql database: db_dev
+          mysql database: db_test
           mysql root password: ${{ secrets.RootPassword }}
           mysql password: ${{ secrets.DatabasePassword }}
       - name: Checkout
