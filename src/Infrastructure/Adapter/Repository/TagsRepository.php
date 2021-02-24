@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Infrastructure\Adapter\Repository;
-
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -15,7 +13,7 @@ use Ramsey\Uuid\UuidInterface;
  * Class TagsRepository
  * @package App\Infrastructure\Adapter\Repository
  */
-class TagsRepository  extends ServiceEntityRepository implements TagGateway
+class TagsRepository extends ServiceEntityRepository implements TagGateway
 {
     /**
      * TagsRepository constructor.
@@ -48,7 +46,7 @@ class TagsRepository  extends ServiceEntityRepository implements TagGateway
      */
     public function getTagById(UuidInterface $id): ?Tag
     {
-        // TODO: Implement getTagById() method.
+        return new Tag(Uuid::uuid4(), "", []);
     }
 
     /**
@@ -57,7 +55,7 @@ class TagsRepository  extends ServiceEntityRepository implements TagGateway
     public function getAll(): array
     {
         return [
-                new Tag(Uuid::uuid4() , "PHP", []),
+                new Tag(Uuid::uuid4(), "PHP", []),
                 new Tag(Uuid::uuid4(), "HTML", []),
                 new Tag(Uuid::uuid4(), "CSS", []),
                 new Tag(Uuid::uuid4(), "Docker", [])

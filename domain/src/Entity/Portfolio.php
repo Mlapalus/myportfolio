@@ -1,9 +1,7 @@
 <?php
+
 namespace MLapalus\Portfolio\Domain\Entity;
 
-
-
-use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use DateTimeInterface;
 
@@ -69,8 +67,8 @@ class Portfolio
         string $description,
         string $img,
         DateTimeInterface $createdDate,
-        array $tags)
-    {
+        array $tags
+    ) {
         $this->id = $id;
         $this->title = $title;
         $this->url = $url;
@@ -79,7 +77,6 @@ class Portfolio
         $this->createdDate = $createdDate;
         $this->tags = $tags;
     }
-
     /**
      * @return string
      */
@@ -192,5 +189,4 @@ class Portfolio
     {
         $this->createdDate = $createdDate;
     }
-
 }

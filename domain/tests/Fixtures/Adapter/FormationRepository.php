@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MLapalus\Portfolio\Domain\Tests\Fixtures\Adapter;
-
 
 use MLapalus\Portfolio\Domain\Entity\Formation;
 use Ramsey\Uuid\Uuid;
@@ -10,7 +8,6 @@ use Ramsey\Uuid\UuidInterface;
 
 class FormationRepository implements \MLapalus\Portfolio\Domain\Gateway\FormationGateway
 {
-
     /**
      * @inheritDoc
      */
@@ -32,7 +29,18 @@ class FormationRepository implements \MLapalus\Portfolio\Domain\Gateway\Formatio
      */
     public function getFormationById(UuidInterface $id): ?Formation
     {
-        // TODO: Implement getFormationById() method.
+        return new Formation(
+            Uuid::uuid4(),
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            new \DateTime(),
+            new \DateTime()
+        );
     }
 
     /**

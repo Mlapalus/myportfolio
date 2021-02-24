@@ -1,4 +1,5 @@
 <?php
+
 namespace MLapalus\Portfolio\Domain\Entity;
 
 use DateTimeInterface;
@@ -83,8 +84,8 @@ class Formation
         string $url,
         string $description,
         DateTimeInterface $startDate,
-        DateTimeInterface $endDate)
-    {
+        DateTimeInterface $endDate
+    ) {
         $this->id = $id;
         $this->title = $title;
         $this->school = $school;
@@ -259,6 +260,4 @@ class Formation
     {
         $this->endDate = $endDate;
     }
-
-
 }

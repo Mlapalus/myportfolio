@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MLapalus\Portfolio\Domain\Tests\Fixtures\Adapter;
-
 
 use MLapalus\Portfolio\Domain\Entity\Tag;
 use Ramsey\Uuid\Uuid;
@@ -10,7 +8,6 @@ use Ramsey\Uuid\UuidInterface;
 
 class TagRepository implements \MLapalus\Portfolio\Domain\Gateway\TagGateway
 {
-
     /**
      * @inheritDoc
      */
@@ -32,7 +29,7 @@ class TagRepository implements \MLapalus\Portfolio\Domain\Gateway\TagGateway
      */
     public function getTagById(UuidInterface $id): ?Tag
     {
-        // TODO: Implement getTagById() method.
+        return new Tag(Uuid::uuid4(), "", []);
     }
 
     /**

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\DataFixtures;
 
 use App\Infrastructure\Doctrine\Entity\Formation;
@@ -9,14 +8,12 @@ use Ramsey\Uuid\Uuid;
 
 class FormationFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture
 {
-
     /**
      * @inheritDoc
      */
     public function load(ObjectManager $manager)
     {
-        for ($i=1; $i < 4; $i++)
-        {
+        for ($i = 1; $i < 4; $i++) {
             $formation = new Formation();
             $formation->setId(Uuid::uuid4());
             $formation->setDescription("Lorem Ipsum dolor sit amet, consectetur adipiscing elit, 

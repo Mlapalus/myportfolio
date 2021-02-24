@@ -1,6 +1,5 @@
 <?php
 
-
 namespace MLapalus\Portfolio\Domain\Tests\Portfolio;
 
 use MLapalus\Portfolio\Domain\Entity\Portfolio;
@@ -34,7 +33,7 @@ class HomePageTest extends TestCase
      */
     protected function setUp(): void
     {
-        $this->presenter = new class() implements HomePresenterInterface {
+        $this->presenter = new class () implements HomePresenterInterface {
             public HomePageResponse $response;
 
             public function present(HomePageResponse $response): array
@@ -42,10 +41,8 @@ class HomePageTest extends TestCase
                 return $response->getAboutMe();
             }
         };
-
         $this->useCase = new HomePage();
     }
-
     /**
      *
      */
@@ -72,10 +69,8 @@ class HomePageTest extends TestCase
         $this->assertEquals("URL1", $data["dataPortfolio"][0]->getUrl());
         $this->assertIsArray($data["dataPortfolio"][0]->getTags());
 
-
         $this->assertInstanceOf(Tag::class, $data["tagData"][0]);
         $this->assertInstanceOf(UuidInterface::class, $data["tagData"][0]->getId());
         $this->assertIsArray($data["tagData"][0]->getPortfolios());
-
     }
 }

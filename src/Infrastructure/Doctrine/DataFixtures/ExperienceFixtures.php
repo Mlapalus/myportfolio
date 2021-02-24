@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\DataFixtures;
-
 
 use App\Infrastructure\Doctrine\Entity\Experience;
 use Doctrine\Persistence\ObjectManager;
@@ -10,14 +8,12 @@ use Ramsey\Uuid\Uuid;
 
 class ExperienceFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture
 {
-
     /**
      * @inheritDoc
      */
     public function load(ObjectManager $manager)
     {
-        for ($i=1; $i < 5; $i++)
-        {
+        for ($i = 1; $i < 5; $i++) {
             $experience = new Experience();
             $experience->setId(Uuid::uuid4());
             $experience->setDescription("Lorem Ipsum dolor sit amet, consectetur adipiscing elit, 

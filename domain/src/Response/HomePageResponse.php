@@ -27,7 +27,7 @@ class HomePageResponse
     /**
      * @return array
      */
-    public function getAboutMe() : array
+    public function getAboutMe(): array
     {
         return [
             "firstname" => "Michel",
@@ -42,5 +42,4 @@ class HomePageResponse
             "dataPortfolio" => $this->dataPortfolio
         ];
     }
-
 }

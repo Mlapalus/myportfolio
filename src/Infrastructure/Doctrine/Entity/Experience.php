@@ -1,12 +1,10 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\Entity;
 
 use Ramsey\Uuid\UuidInterface;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
-
 
 /**
  * Class Experience
@@ -106,8 +104,6 @@ class Experience
     {
         $this->pdf = $pdf;
     }
-
-
 
     /**
      * @var DateTimeInterface
@@ -216,6 +212,4 @@ class Experience
     {
         $this->endDate = $endDate;
     }
-
-
 }

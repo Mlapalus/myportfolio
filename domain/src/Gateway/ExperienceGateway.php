@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MLapalus\Portfolio\Domain\Gateway;
-
 
 use MLapalus\Portfolio\Domain\Entity\Experience;
 use Ramsey\Uuid\UuidInterface;

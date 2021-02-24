@@ -2,6 +2,7 @@
 
 namespace MLapalus\Portfolio\Domain\Tests\Fixtures\Adapter;
 
+use DateTime;
 use MLapalus\Portfolio\Domain\Entity\Experience;
 use MLapalus\Portfolio\Domain\Gateway\ExperienceGateway;
 use Ramsey\Uuid\Nonstandard\Uuid;
@@ -22,7 +23,17 @@ class ExperienceRepository implements ExperienceGateway
 
     public function getExperienceById(UuidInterface $id): ?Experience
     {
-        // TODO: Implement getExperienceById() method.
+        return new Experience(
+            Uuid::uuid4(),
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            new DateTime(),
+            new DateTime()
+        );
     }
 
     public function getAll(): array
@@ -36,8 +47,8 @@ class ExperienceRepository implements ExperienceGateway
                 'URL1',
                 'PDF1',
                 'IMG1',
-                new \DateTime(),
-                new \DateTime()
+                new DateTime(),
+                new DateTime()
             ),
             new Experience(
                 Uuid::uuid4(),
@@ -47,8 +58,8 @@ class ExperienceRepository implements ExperienceGateway
                 'URL2',
                 'PDF2',
                 'IMG2',
-                new \DateTime(),
-                new \DateTime()
+                new DateTime(),
+                new DateTime()
             ),
             new Experience(
                 Uuid::uuid4(),
@@ -58,8 +69,8 @@ class ExperienceRepository implements ExperienceGateway
                 'URL3',
                 'PDF3',
                 'IMG3',
-                new \DateTime(),
-                new \DateTime()
+                new DateTime(),
+                new DateTime()
             )
         ];
     }

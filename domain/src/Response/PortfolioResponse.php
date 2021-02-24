@@ -1,8 +1,6 @@
 <?php
 
-
 namespace MLapalus\Portfolio\Domain\Response;
-
 
 class PortfolioResponse
 {
@@ -29,7 +27,6 @@ class PortfolioResponse
             "languageTags" => $this->tagData,
             "dataPortfolio" => $this->dataPortfolio,
             "tagData" => $this->tagData
-
         ];
     }
 }

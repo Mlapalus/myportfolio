@@ -1,17 +1,15 @@
 <?php
 
-
 namespace MLapalus\Portfolio\Domain\Tests\Fixtures\Adapter;
 
-
 use MLapalus\Portfolio\Domain\Entity\Portfolio;
+use MLapalus\Portfolio\Domain\Gateway\PortfolioGateway;
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 use Symfony\Component\Validator\Constraints\DateTime;
 
-class PortfolioRepository implements \MLapalus\Portfolio\Domain\Gateway\PortfolioGateway
+class PortfolioRepository implements PortfolioGateway
 {
-
     /**
      * @inheritDoc
      */
@@ -33,7 +31,15 @@ class PortfolioRepository implements \MLapalus\Portfolio\Domain\Gateway\Portfoli
      */
     public function getPortfolioById(UuidInterface $id): ?Portfolio
     {
-        // TODO: Implement getPortfolioById() method.
+        return new Portfolio(
+            Uuid::uuid4(),
+            "",
+            "",
+            "",
+            "",
+            new \DateTime(),
+            []
+        );
     }
 
     /**
@@ -41,7 +47,7 @@ class PortfolioRepository implements \MLapalus\Portfolio\Domain\Gateway\Portfoli
      */
     public function getAll(): array
     {
-       return [
+        return [
            new Portfolio(
                Uuid::uuid4(),
                "Portfolio1",
@@ -49,7 +55,8 @@ class PortfolioRepository implements \MLapalus\Portfolio\Domain\Gateway\Portfoli
                "Description1",
                "IMG1",
                new \DateTime(),
-               (new TagRepository())->getAll()),
+               (new TagRepository())->getAll()
+           ),
            new Portfolio(
                Uuid::uuid4(),
                "Portfolio2",
@@ -57,7 +64,8 @@ class PortfolioRepository implements \MLapalus\Portfolio\Domain\Gateway\Portfoli
                "Description2",
                "IMG2",
                new \DateTime(),
-               (new TagRepository())->getAll()),
-       ];
+               (new TagRepository())->getAll()
+           )
+            ];
     }
 }

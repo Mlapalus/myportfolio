@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\Entity;
-
 
 use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
@@ -181,5 +179,4 @@ class Portfolio
     {
         $this->createdDate = $createdDate;
     }
-
 }

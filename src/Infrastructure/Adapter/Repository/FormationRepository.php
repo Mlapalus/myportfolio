@@ -1,12 +1,12 @@
 <?php
 
-
 namespace App\Infrastructure\Adapter\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use MLapalus\Portfolio\Domain\Entity\Formation;
 use MLapalus\Portfolio\Domain\Gateway\FormationGateway;
+use Ramsey\Uuid\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 class FormationRepository extends ServiceEntityRepository implements FormationGateway
@@ -28,7 +28,18 @@ class FormationRepository extends ServiceEntityRepository implements FormationGa
 
     public function getFormationById(UuidInterface $id): ?Formation
     {
-        // TODO: Implement getFormationById() method.
+        return new Formation(
+            Uuid::uuid4(),
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            new \DateTime(),
+            new \DateTime()
+        );
     }
 
     public function getAll(): array

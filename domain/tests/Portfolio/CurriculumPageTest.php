@@ -21,7 +21,6 @@ use Ramsey\Uuid\UuidInterface;
  */
 class CurriculumPageTest extends TestCase
 {
-
     /**
      * @var CurriculumPage
      */
@@ -34,7 +33,7 @@ class CurriculumPageTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->presenter = new class() implements CurriculumPresenterInterface {
+        $this->presenter = new class () implements CurriculumPresenterInterface {
             public CurriculumResponse $response;
 
             public function present(CurriculumResponse $response): array
@@ -71,12 +70,12 @@ class CurriculumPageTest extends TestCase
 
         $this->assertInstanceOf(Experience::class, $data["experiences"][0]);
         $this->assertInstanceOf(UuidInterface::class, $data["experiences"][0]->getId());
-        $this->assertEquals("Exp1",$data["experiences"][0]->getTitle());
-        $this->assertEquals("Cie1",$data["experiences"][0]->getCompany());
-        $this->assertEquals("Description1",$data["experiences"][0]->getDescription());
-        $this->assertEquals("URL1",$data["experiences"][0]->getUrl());
-        $this->assertEquals("IMG1",$data["experiences"][0]->getImg());
-        $this->assertEquals("PDF1",$data["experiences"][0]->getPdf());
+        $this->assertEquals("Exp1", $data["experiences"][0]->getTitle());
+        $this->assertEquals("Cie1", $data["experiences"][0]->getCompany());
+        $this->assertEquals("Description1", $data["experiences"][0]->getDescription());
+        $this->assertEquals("URL1", $data["experiences"][0]->getUrl());
+        $this->assertEquals("IMG1", $data["experiences"][0]->getImg());
+        $this->assertEquals("PDF1", $data["experiences"][0]->getPdf());
         $this->assertInstanceOf(\DateTimeInterface::class, $data["experiences"][0]->getEndDate());
         $this->assertInstanceOf(\DateTimeInterface::class, $data["experiences"][0]->getStartDate());
 
@@ -89,23 +88,21 @@ class CurriculumPageTest extends TestCase
         $this->assertInstanceOf(Formation::class, $data["formations"][0]);
         $this->assertInstanceOf(UuidInterface::class, $data["formations"][0]->getId());
 
-        $this->assertEquals("URL1",$data["formations"][0]->getUrl());
-        $this->assertEquals("IMG1",$data["formations"][0]->getImg());
-        $this->assertEquals("PDF1",$data["formations"][0]->getPdf());
-        $this->assertEquals("Grd1",$data["formations"][0]->getGraduate());
-        $this->assertEquals("School1",$data["formations"][0]->getSchool());
-        $this->assertEquals("Description1",$data["formations"][0]->getDescription());
+        $this->assertEquals("URL1", $data["formations"][0]->getUrl());
+        $this->assertEquals("IMG1", $data["formations"][0]->getImg());
+        $this->assertEquals("PDF1", $data["formations"][0]->getPdf());
+        $this->assertEquals("Grd1", $data["formations"][0]->getGraduate());
+        $this->assertEquals("School1", $data["formations"][0]->getSchool());
+        $this->assertEquals("Description1", $data["formations"][0]->getDescription());
 
         $this->assertInstanceOf(Portfolio::class, $data["dataPortfolio"][0]);
         $this->assertInstanceOf(UuidInterface::class, $data["dataPortfolio"][0]->getId());
-        $this->assertEquals("IMG1",$data["dataPortfolio"][0]->getImg());
-        $this->assertEquals("URL1",$data["dataPortfolio"][0]->getUrl());
+        $this->assertEquals("IMG1", $data["dataPortfolio"][0]->getImg());
+        $this->assertEquals("URL1", $data["dataPortfolio"][0]->getUrl());
         $this->assertIsArray($data["dataPortfolio"][0]->getTags());
-
 
         $this->assertInstanceOf(Tag::class, $data["tagData"][0]);
         $this->assertInstanceOf(UuidInterface::class, $data["tagData"][0]->getId());
         $this->assertIsArray($data["tagData"][0]->getPortfolios());
-
     }
 }

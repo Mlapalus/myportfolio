@@ -28,10 +28,9 @@ class CurriculumController
         PortfolioRepository $portfolio,
         TagsRepository $tags,
         CurriculumPage $curriculumPage,
-        CurriculumPresenter $presenter): Response
-    {
+        CurriculumPresenter $presenter
+    ): Response {
         $data = $curriculumPage->execute($experience, $formation, $tags, $portfolio);
         return new Response($this->view->render('curriculum', $presenter->present($data)));
     }
-
 }

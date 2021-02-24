@@ -1,13 +1,13 @@
 <?php
 
-
 namespace App\Infrastructure\Adapter\Repository;
 
-
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use MLapalus\Portfolio\Domain\Entity\Experience;
 use MLapalus\Portfolio\Domain\Gateway\ExperienceGateway;
+use Ramsey\Uuid\Nonstandard\Uuid;
 use Ramsey\Uuid\UuidInterface;
 
 class ExperienceRepository extends ServiceEntityRepository implements ExperienceGateway
@@ -29,7 +29,17 @@ class ExperienceRepository extends ServiceEntityRepository implements Experience
 
     public function getExperienceById(UuidInterface $id): ?Experience
     {
-        // TODO: Implement getExperienceById() method.
+        return new Experience(
+            Uuid::uuid4(),
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            new DateTime(),
+            new DateTime()
+        );
     }
 
     public function getAll(): array

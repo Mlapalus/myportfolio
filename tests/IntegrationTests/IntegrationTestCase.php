@@ -1,10 +1,9 @@
 <?php
 
-
 namespace App\Tests\IntegrationTests;
 
-
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class IntegrationTestCase

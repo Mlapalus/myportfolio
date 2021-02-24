@@ -1,6 +1,8 @@
 <?php
+
 namespace MLapalus\Portfolio\Domain\Entity;
 
+use DateTimeInterface;
 use Ramsey\Uuid\UuidInterface;
 
 /**
@@ -12,7 +14,7 @@ class Experience
     /**
      * @var UuidInterface
      */
-    private UuidInterface  $id;
+    private UuidInterface $id;
     /**
      * @var string
      */
@@ -38,13 +40,13 @@ class Experience
      */
     private string $pdf;
     /**
-     * @var \DateTimeInterface
+     * @var DateTimeInterface
      */
-    private \DateTimeInterface $startDate;
+    private DateTimeInterface $startDate;
     /**
-     * @var \DateTimeInterface
+     * @var DateTimeInterface
      */
-    private \DateTimeInterface $endDate;
+    private DateTimeInterface $endDate;
 
     /**
      * Experience constructor.
@@ -52,8 +54,8 @@ class Experience
      * @param string $title
      * @param string $company
      * @param string $description
-     * @param \DateTimeInterface $startDate
-     * @param \DateTimeInterface $endDate
+     * @param DateTimeInterface $startDate
+     * @param DateTimeInterface $endDate
      */
     public function __construct(
         UuidInterface $id,
@@ -63,10 +65,9 @@ class Experience
         string $url,
         string $pdf,
         string $img,
-        \DateTimeInterface $startDate,
-        \DateTimeInterface $endDate
-    )
-    {
+        DateTimeInterface $startDate,
+        DateTimeInterface $endDate
+    ) {
         $this->id = $id;
         $this->title = $title;
         $this->company = $company;
@@ -135,33 +136,33 @@ class Experience
     }
 
     /**
-     * @return \DateTimeInterface
+     * @return DateTimeInterface
      */
-    public function getStartDate(): \DateTimeInterface
+    public function getStartDate(): DateTimeInterface
     {
         return $this->startDate;
     }
 
     /**
-     * @param \DateTimeInterface $startDate
+     * @param DateTimeInterface $startDate
      */
-    public function setStartDate(\DateTimeInterface $startDate): void
+    public function setStartDate(DateTimeInterface $startDate): void
     {
         $this->startDate = $startDate;
     }
 
     /**
-     * @return \DateTimeInterface
+     * @return DateTimeInterface
      */
-    public function getEndDate(): \DateTimeInterface
+    public function getEndDate(): DateTimeInterface
     {
         return $this->endDate;
     }
 
     /**
-     * @param \DateTimeInterface $endDate
+     * @param DateTimeInterface $endDate
      */
-    public function setEndDate(\DateTimeInterface $endDate): void
+    public function setEndDate(DateTimeInterface $endDate): void
     {
         $this->endDate = $endDate;
     }
@@ -213,6 +214,4 @@ class Experience
     {
         $this->pdf = $pdf;
     }
-
-
 }

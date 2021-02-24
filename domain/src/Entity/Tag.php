@@ -1,8 +1,8 @@
 <?php
+
 namespace MLapalus\Portfolio\Domain\Entity;
 
 use Ramsey\Uuid\UuidInterface;
-use Ramsey\Uuid\Uuid;
 
 /**
  * Class PortfolioTags
@@ -35,8 +35,8 @@ class Tag
     public function __construct(
         UuidInterface $id,
         string $tag,
-        array $portfolios)
-    {
+        array $portfolios
+    ) {
         $this->id = $id;
         $this->tag = $tag;
         $this->portfolios = $portfolios;
@@ -90,5 +90,4 @@ class Tag
     {
         $this->tag = $tag;
     }
-
 }

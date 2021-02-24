@@ -1,6 +1,5 @@
 <?php
 
-
 namespace MLapalus\Portfolio\Domain\Response;
 
 class CurriculumResponse
@@ -33,14 +32,13 @@ class CurriculumResponse
         array $dataPortfolio,
         array $tagData,
         array $experience,
-        array $formation)
-    {
+        array $formation
+    ) {
         $this->dataPortfolio = $dataPortfolio;
         $this->tagData = $tagData;
         $this->experience = $experience;
         $this->formation = $formation;
     }
-
 
     /**
      * @return array

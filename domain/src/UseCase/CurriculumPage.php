@@ -1,6 +1,5 @@
 <?php
 
-
 namespace MLapalus\Portfolio\Domain\UseCase;
 
 use MLapalus\Portfolio\Domain\Gateway\ExperienceGateway;
@@ -16,12 +15,11 @@ class CurriculumPage
         FormationGateway $formation,
         TagGateway $tags,
         PortfolioGateway $portfolio
-    ): CurriculumResponse
-    {
+    ): CurriculumResponse {
         $dataPortfolio = $portfolio->getAll();
         $tagData = $tags->getAll();
         $dataFormation = $formation->getAll();
         $dataExperience = $experience->getAll();
-        return new CurriculumResponse($dataPortfolio,$tagData, $dataExperience,$dataFormation);
+        return new CurriculumResponse($dataPortfolio, $tagData, $dataExperience, $dataFormation);
     }
 }

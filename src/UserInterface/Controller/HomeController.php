@@ -37,10 +37,8 @@ class HomeController
         HomePresenter $homePresenter,
         PortfolioRepository $portfolio,
         TagsRepository $tags
-    ): Response
-    {
+    ): Response {
         $data = $homePage->execute($portfolio, $tags);
         return new Response($this->view->render('home', $homePresenter->present($data)));
     }
-
 }

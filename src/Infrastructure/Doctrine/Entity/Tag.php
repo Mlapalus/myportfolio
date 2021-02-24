@@ -90,5 +90,4 @@ class Tag
     {
         $this->tag = $tag;
     }
-
 }

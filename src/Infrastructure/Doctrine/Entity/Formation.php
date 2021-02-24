@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Infrastructure\Doctrine\Entity;
-
 
 use Ramsey\Uuid\UuidInterface;
 use Ramsey\Uuid\Uuid;
@@ -240,7 +238,4 @@ class Formation
     {
         $this->endDate = $endDate;
     }
-
-
-
 }

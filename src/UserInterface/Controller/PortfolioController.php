@@ -25,10 +25,8 @@ class PortfolioController
         TagsRepository $tags,
         PortfolioPage $portfolioPage,
         PortfolioPresenter $presenter
-    ): Response
-    {
+    ): Response {
         $data = $portfolioPage->execute($portfolio, $tags);
         return new Response($this->view->render('portfolio', $presenter->present($data)));
     }
-
 }
