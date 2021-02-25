@@ -1,4 +1,4 @@
-name: Build
+name: CI with database
   on: [push]
   jobs:
     build:
