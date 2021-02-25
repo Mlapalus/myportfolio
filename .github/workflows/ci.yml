@@ -2,41 +2,33 @@ name: CI with database
   on: [push]
   jobs:
     build:
-      name: Build
+      name:
       runs-on: ${{ matrix.operating-system }}
       strategy:
         fail-fast: false
         matrix:
           operating-system: [ubuntu-latest]
           php-versions: ['7.4']
-      services:
-        mysql:
-          image: mysql:5.7
-          env:
-            MYSQL_ROOT_PASSWORD: ''
-          ports:
-            - 3306:3306
       steps:
         - uses: mirromutth/mysql-action@v1.1
           with:
-          host port: 3306
           mysql version: '5.7'
-          mysql database: db_portfolio
-          mysql root password: ${{ secrets.RootPassword }}
-          mysql password: ${{ secrets.DatabasePassword }}
-
+          mysql database: mysql
 
         - name: Checkout
           uses: actions/checkout@v2
+
         - name: Setup PHP, with composer and extensions
           uses: shivammathur/setup-php@v2
           with:
             php-version: ${{ matrix.php-versions }}
             extensions: mbstring, xml, ctype, iconv, intl
             coverage: xdebug
+
         - name: Get composer cache directory
           id: composer-cache
           run: echo "::set-output name=dir::$(composer config cache-files-dir)"
+
         - name: Cache composer dependencies
           uses: actions/cache@v1
           with:
