@@ -1,6 +1,6 @@
 <section class="container cv">
     <div class="masonry-portfolio fixed-filters row">
-        <h2>Expérience</h2>
+        <h2>{{ title }}</h2>
         <div class="masonry-portfolio-items">
             {% for datum in data %}
                 {{  include('fragments/cv/_card.html.twig', {
