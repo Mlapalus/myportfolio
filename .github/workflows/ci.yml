@@ -37,36 +37,18 @@ jobs:
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
           restore-keys: ${{ runner.os }}-composer-
 
-      - name : Compoer Install
-        run : composer install --prefer-dist
+      - name: Use docker
+        run: docker-compose up -d
 
-      - name: Symfony Cache Clear
-        run : php bin/console cache:clear --env=test
-
-      - name: Database Drop
-        run: php bin/console doctrine:database:drop --if-exists -f --env=test
+      - name: Prepare Database Test
+        run: docker-compose exec www make prepare-test
         env:
-          DATABASE_URL: "mysql://root:@mysql:3306/db_test?serverVersion=5.7"
-
-      - name: Database Create
-        run: php bin/console doctrine:database:create --env=test
-        env:
-          DATABASE_URL: "mysql://root:@mysql:3306/db_test?serverVersion=5.7"
-
-      - name: Database Schema update
-        run: php bin/console doctrine:schema:update -f --env=test
-        env:
-          DATABASE_URL: "mysql://root:@mysql:3306/db_test?serverVersion=5.7"
-
-      - name: Database Load Fixtures
-        run: php bin/console doctrine:fixtures:load -n --env=test
-        env:
-          DATABASE_URL: "mysql://root:@mysql:3306/db_test?serverVersion=5.7"
+          DATABASE_URL: "mysql://root:@db_myportfolio:3306/db_test?serverVersion=5.7"
 
       - name: Run Tests
-        run: bin/phpunit --testsuite unit,integration,system,end_to_end
+        run: docker-compose exec www make tests
         env:
-          DATABASE_URL: "mysql://root:@mysql:3306/db_test?serverVersion=5.7"
+          DATABASE_URL: "mysql://root:@db_myportfolio:3306/db_test?serverVersion=5.7"
 
 
 
