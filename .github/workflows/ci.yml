@@ -9,6 +9,14 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest]
         php-versions: ['7.4']
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_DATABASE: db_myportfolio
+          MYSQL_ROOT_PASSWORD: ''
+        ports:
+          - 3306:3306
     steps:
       - name: Checkout
         uses: actions/checkout@v2
