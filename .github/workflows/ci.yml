@@ -14,6 +14,7 @@ jobs:
         with:
           mysql version: '5.7'
           mysql database: mysql
+          mysql root password: ${{ secrets.RootPassword }}
 
       - name: Checkout
         uses: actions/checkout@v2
