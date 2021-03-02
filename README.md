@@ -8,7 +8,7 @@
 </p>
 
 
-# Mon site perso: Mon CV & Mes Réalisations
+# Mon site personnel: Mon CV & Mes Réalisations
 ## Stack :
         PHP 7.4.15
         Symfony 4.22.0
