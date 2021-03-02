@@ -44,10 +44,10 @@ prepare-test:
 	php bin/console doctrine:fixtures:load -n --env=test
 
 integration:
-    composer install --prefer-dist
-    cp .env.integration .env.test
-    php bin/console doctrine:database:drop --if-exists --force --env=test
-    php bin/console doctrine:database:create --env=test
-    php bin/console doctrine:schema:update --force --env=test
-    php bin/console doctrine:fixtures:load -n --env=test
-    bin/phpunit --testsuite unit,integration,system,end_to_end
+	composer install --prefer-dist
+	cp .env.integration .env.test
+	php bin/console cache:clear --env=test
+	php bin/console doctrine:database:drop --if-exists -f --env=test
+	php bin/console doctrine:database:create --env=test
+	php bin/console doctrine:schema:update -f --env=test
+	php bin/console doctrine:fixtures:load -n --env=test
