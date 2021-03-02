@@ -35,12 +35,12 @@ jobs:
         run: docker-compose up -d
 
       - name: Prepare Database Test
-        run: docker-compose -it exec www make prepare-test
+        run: docker-compose exec www sh -c make prepare-test
         env:
           DATABASE_URL: "mysql://root:@db_myportfolio:3306/db_test?serverVersion=5.7"
 
       - name: Run Tests
-        run: docker-compose -it exec www make tests
+        run: docker-compose exec www sh -c make tests
         env:
           DATABASE_URL: "mysql://root:@db_myportfolio:3306/db_test?serverVersion=5.7"
 
